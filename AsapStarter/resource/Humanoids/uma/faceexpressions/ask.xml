@@ -1,0 +1,7 @@
+<FACSConfiguration>
+   <AU number="1" side="LEFT" value="1.0"/>
+   <AU number="4" side="LEFT" value="0.77"/>
+   <AU number="25" side="NONE" value="0.06"/>
+   <AU number="1" side="RIGHT" value="1.0"/>
+   <AU number="4" side="RIGHT" value="0.8"/>
+</FACSConfiguration>

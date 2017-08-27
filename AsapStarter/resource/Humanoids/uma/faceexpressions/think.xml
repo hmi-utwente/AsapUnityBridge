@@ -1,0 +1,22 @@
+<FACSConfiguration>
+   <AU number="2" side="LEFT" value="0.35"/>
+   <AU number="4" side="LEFT" value="0.84"/>
+   <AU number="7" side="LEFT" value="0.15"/>
+   <AU number="10" side="LEFT" value="0.14"/>
+   <AU number="15" side="LEFT" value="0.28"/>
+   <AU number="23" side="NONE" value="0.16"/>
+   <AU number="24" side="NONE" value="0.16"/>
+   <AU number="41" side="LEFT" value="0.15"/>
+   <AU number="44" side="LEFT" value="0.12"/>
+   <AU number="61" side="LEFT" value="0.17"/>
+   <AU number="63" side="LEFT" value="0.37"/>
+   <AU number="2" side="RIGHT" value="0.35"/>
+   <AU number="4" side="RIGHT" value="0.84"/>
+   <AU number="7" side="RIGHT" value="0.15"/>
+   <AU number="10" side="RIGHT" value="0.14"/>
+   <AU number="15" side="RIGHT" value="0.28"/>
+   <AU number="41" side="RIGHT" value="0.15"/>
+   <AU number="44" side="RIGHT" value="0.12"/>
+   <AU number="61" side="RIGHT" value="0.17"/>
+   <AU number="63" side="RIGHT" value="0.37"/>
+</FACSConfiguration>

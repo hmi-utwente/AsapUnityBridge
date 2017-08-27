@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<facebinding>
+  <FaceUnitSpec type="faceLexeme">
+    <constraints>
+      <constraint name="lexeme" value="smile"/>
+    </constraints>
+    <parametermap>
+      <parameter src="amount" dst="intensity"/>
+    </parametermap>
+    <parameterdefaults>
+      <parameterdefault name="intensity" value="1"/>
+      <parameterdefault name="targetname" value="visLN"/>
+    </parameterdefaults>
+    <FaceUnit type="Morph"/>
+  </FaceUnitSpec>
+</facebinding>

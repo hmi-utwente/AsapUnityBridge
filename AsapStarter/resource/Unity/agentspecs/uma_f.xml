@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<AsapVirtualHuman id="UMA_F">
+  <Loader id="realizer" loader="asap.realizerembodiments.AsapRealizerEmbodiment">
+    <BMLParser>
+      <BMLAttributeExtension class="asap.bml.ext.bmla.BMLABMLBehaviorAttributes"/>
+    </BMLParser>
+    <BMLScheduler>
+      <SchedulingHandler class="asap.realizer.scheduler.BMLASchedulingHandler" schedulingStrategy="asap.realizer.scheduler.SortedSmartBodySchedulingStrategy"/>
+    </BMLScheduler>
+    <PipeLoader id="visualizerpipe" loader="asap.bmlflowvisualizer.loader.AsapBMLFlowVisualizerPortLoader"/>
+    <PipeLoader id="pipe" loader="asap.middlewareadapters.loader.MiddlewareToBMLRealizerAdapterLoader">
+      <MiddlewareOptions loaderclass="nl.utwente.hmi.middleware.udp.UDPMultiClientMiddlewareLoader">
+        <MiddlewareProperty name="port" value="6662"/>
+      </MiddlewareOptions>
+    </PipeLoader>
+  </Loader>
+  <Loader id="guiembodiment" loader="asap.realizerembodiments.JFrameEmbodiment">
+    <BmlUI demoscriptresources="Unity/testbml"/>
+    <FeedbackUI/>
+  </Loader>
+  <Loader id="eyelidmorpher" loader="hmi.faceembodiments.loader.EyelidMorpherLoader">
+    <Morphs ids="FACS_AU_45" weight="1.0"/>
+  </Loader>
+  <Loader id="unityembodiment" loader="hmi.unityembodiments.loader.UnityEmbodimentLoader">
+    <MiddlewareOptions loaderclass="nl.utwente.hmi.middleware.udp.UDPMultiClientMiddlewareLoader">
+      <MiddlewareProperty name="port" value="6652"/>
+    </MiddlewareOptions>
+  </Loader>
+  <Loader id="mixedskeletonembodiment" loader="hmi.physicsenvironment.MixedSkeletonEmbodimentLoader" requiredloaders="unityembodiment"/>
+  <Loader id="physicalembodiment" loader="hmi.physicsenvironment.OdePhysicalEmbodiment" requiredloaders="mixedskeletonembodiment">
+    <MixedSystems>
+      <!-- TOOD: Find out how to make custom mixedsystems (procedurally) that fit new humanoids -->
+      <MixedSystem name="lowerbody" resources="Humanoids/armandia/mixedsystems/" filename="armandialowerbody.xml"/>
+      <MixedSystem name="lowerbodyandleftarm" resources="Humanoids/armandia/mixedsystems/" filename="armandialowerbodyandleftarm.xml"/>
+      <MixedSystem name="lowerbodyandrightarm" resources="Humanoids/armandia/mixedsystems/" filename="armandialowerbodyandrightarm.xml"/>
+      <MixedSystem name="lowerbodyandarms" resources="Humanoids/armandia/mixedsystems/" filename="armandialowerbodyarms.xml"/>
+    </MixedSystems>
+    <GlueFeetToFloor/>
+  </Loader>
+  <Loader id="animationengine" loader="asap.animationengine.loader.MixedAnimationEngineLoader" requiredloaders="mixedskeletonembodiment,physicalembodiment">
+    <GestureBinding basedir="" resources="" filename="Humanoids/uma/gesturebinding/gesturebinding_iva.xml"/>
+    <StartPose>
+      <RestPose type="SkeletonPose" file="Humanoids/uma/restposes/resthips.xml"/>
+    </StartPose>
+    <Hns resources="Humanoids/armandia/hns" filename="hns_armandia.xml"/>
+    <HnsHandShape dir="Humanoids/shared/handshapes"/>
+  </Loader>
+  <Loader id="faceengine" loader="asap.faceengine.loader.FaceEngineLoader" requiredloaders="unityembodiment">
+    <FaceBinding basedir="" resources="Humanoids/uma/facebinding/" filename="facebinding.xml" facs2morphmappingresources="Humanoids/uma/facs2morph/" facs2morphmappingfilename="facs2morphmapping.xml"/>
+  </Loader>
+  <Loader id="facelipsync" requiredloaders="faceengine" loader="asap.faceengine.loader.TimedFaceUnitLipSynchProviderLoader">
+    <MorphVisemeBinding resources="Humanoids/uma/facebinding/" filename="visemebinding_disney.xml"/>
+    <!--<MorphVisemeBinding resources="Humanoids/uma/facebinding/" filename="visemebinding_ikp.xml"/> -->
+  </Loader>
+  <Loader id="ttsbinding" loader="asap.marytts5binding.loader.MaryTTSBindingLoader">
+    <PhonemeToVisemeMapping resources="Humanoids/shared/phoneme2viseme/" filename="sampaen2disney.xml"/>
+  </Loader>
+  <Loader id="speechengine" loader="asap.speechengine.loader.SpeechEngineLoader" requiredloaders="facelipsync,ttsbinding">
+    <Voice factory="WAV_TTS" voicename="dfki-prudence"/>
+  </Loader>
+  <!-- Breathingemitter that sens small breathing animations every now and then -->
+  <Loader id="breathingengine" loader="asap.emitterengine.loader.EmitterEngineLoader">
+    <EmitterInfo class="asap.breathingemitter.BreathingEmitterInfo"/>
+  </Loader>
+  <!-- Blinkemitter that sens small blink animations every now and then -->
+  <Loader id="blinkengine" loader="asap.emitterengine.loader.EmitterEngineLoader">
+    <EmitterInfo class="asap.blinkemitter.BlinkEmitterInfo"/>
+  </Loader>
+  <!-- Engine for playing audio files, nice for sound effects (e.g., clapping) or for prerecorded speech fragments -->
+  <Loader id="audioengine" loader="asap.audioengine.loader.AudioEngineLoader"/>
+</AsapVirtualHuman>

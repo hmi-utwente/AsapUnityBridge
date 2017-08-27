@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<configuration debug="true">
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>
+        [%thread] %-5level %logger{36} - %msg%n
+     </pattern>
+    </encoder>
+  </appender>
+  <root level="WARN">
+    <appender-ref ref="STDOUT"/>
+  </root>
+  <logger name="hmi.unityembodiments" level="DEBUG"/>
+  <logger name="asap.environment" level="INFO"/>
+  <logger name="hmi.faceanimation.converters" level="WARN"/>
+  <logger name="asap.faceengine.faceunit" level="WARN"/>
+  <logger name="nl.utwente" level="INFO"/>
+  <logger name="hmi.flipper" level="INFO"/>
+  <logger name="hmmm.FlipperISVisualiser" level="WARN"/>
+  <logger name="nl.utwente.hmi.middleware" level="INFO"/>
+  <!--
+  <logger name="asap.bml.requests" level="DEBUG"/ -->
+</configuration>

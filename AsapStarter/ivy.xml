@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<ivy-module version="2.0">
+  <info organisation="HMI" module="AsapStarter"/>
+  <configurations>
+    <include file="${ivy.settings.dir}/configurations.xml"/>
+  </configurations>
+  <dependencies>
+    <dependency org="saiba" name="openbmlparser" rev="latest.release"/>
+    <dependency org="HMI" name="HmiXml" transitive="false" rev="latest.${resolve.status}"/>
+    <dependency org="HMI" name="HmiUtil" rev="latest.${resolve.status}"/>
+    <dependency org="HMI" name="HmiTTS" rev="latest.${resolve.status}"/>
+    <dependency org="HMI" name="HmiTTSFluency8" rev="latest.${resolve.status}"/>
+    <dependency org="HMI" name="HmiTTSSapi5" rev="latest.${resolve.status}"/>
+    <dependency org="HMI" name="HmiTTSnative" rev="latest.release"/>
+    <dependency org="HMI" name="HmiJComponentEnvironment" rev="latest.${resolve.status}"/>
+    <dependency org="HMI" name="HmiTTSMary5" rev="latest.${resolve.status}"/>
+    <dependency org="HMI" name="HmiGraphics" rev="latest.${resolve.status}"/>
+    <dependency org="HMI" name="HmiFaceGraphics" rev="latest.${resolve.status}"/>
+    <dependency org="HMI" name="HmiEnvironmentBase" rev="latest.${resolve.status}"/>
+    <dependency org="HMI" name="HmiFaceEmbodiments" rev="latest.${resolve.status}"/>
+    <dependency org="HMI" name="HmiHeadAndGazeEmbodiments" rev="latest.${resolve.status}"/>
+    <dependency org="HMI" name="HmiTextEmbodiments" rev="latest.${resolve.status}"/>
+    <dependency org="HMI" name="HmiPhysics" rev="latest.${resolve.status}"/>
+    <dependency org="HMI" name="HmiPhysicsEmbodiments" rev="latest.${resolve.status}"/>
+    <dependency org="HMI" name="HmiPhysicsEnvironment" rev="latest.${resolve.status}"/>
+    <dependency org="HMI" name="HmiAnimationEmbodiments" rev="latest.${resolve.status}"/>
+    <dependency org="HMI" name="HmiMixedAnimationEnvironment" rev="latest.${resolve.status}"/>
+    <dependency org="HMI" name="HmiRenderEnvironment" rev="latest.${resolve.status}"/>
+    <dependency org="HMI" name="HmiWorldObjectEnvironment" rev="latest.${resolve.status}"/>
+    <dependency org="HMI" name="HmiAudioEnvironment" rev="latest.${resolve.status}"/>
+    <dependency org="HMI" name="HmiDebug" rev="latest.${resolve.status}"/>
+    <dependency org="HMI" name="AsapBodyAndFaceEmbodiments" rev="latest.${resolve.status}"/>
+    <dependency org="HMI" name="DefaultShaders" rev="latest.${resolve.status}"/>
+    <dependency org="HMI" name="HmiHumanoidEmbodimentArmandia" rev="latest.${resolve.status}"/>
+    <dependency org="HMI" name="HmiHumanoidEmbodimentShared" rev="latest.${resolve.status}"/>
+    <dependency org="HMI" name="HmiFlipper" rev="latest.${resolve.status}"/>
+    <dependency org="HMI" name="HmiFlipperMiddlewareExtension" rev="latest.${resolve.status}"/>
+    <dependency org="HMI" name="LogbackConfigs" rev="latest.${resolve.status}"/>
+    <dependency org="HMI" name="HmiUnityEmbodiments" rev="latest.${resolve.status}"/>
+    <dependency org="Asap" name="AsapFluency8TTSBinding" rev="latest.${resolve.status}"/>
+    <dependency org="Asap" name="AsapSapi5TTSBinding" rev="latest.${resolve.status}"/>
+    <dependency org="Asap" name="AsapAnimationEngine" rev="latest.${resolve.status}"/>
+    <dependency org="Asap" name="AsapMiddlewareEngine" rev="latest.${resolve.status}"/>
+    <dependency org="Asap" name="AsapEnvironment" rev="latest.${resolve.status}"/>
+    <dependency org="Asap" name="AsapBML" rev="latest.${resolve.status}"/>
+    <dependency org="Asap" name="AsapRealizerPort" rev="latest.${resolve.status}"/>
+    <dependency org="Asap" name="AsapRealizer" rev="latest.${resolve.status}"/>
+    <dependency org="Asap" name="AsapRealizerEmbodiments" rev="latest.${resolve.status}"/>
+    <dependency org="Asap" name="AsapMiddlewareRealizerAdapters" rev="latest.${resolve.status}"/>
+    <dependency org="Asap" name="AsapMURML" rev="latest.${resolve.status}"/>
+    <dependency org="Asap" name="AsapFaceEngine" rev="latest.${resolve.status}"/>
+    <dependency org="Asap" name="AsapAudioEngine" rev="latest.${resolve.status}"/>
+    <dependency org="Asap" name="AsapSpeechEngine" rev="latest.${resolve.status}"/>
+    <dependency org="Asap" name="AsapTextEngine" rev="latest.${resolve.status}"/>
+    <dependency org="Asap" name="AsapLiveMocapEngine" rev="latest.${resolve.status}"/>
+    <dependency org="Asap" name="AsapPictureEngine" rev="latest.${resolve.status}"/>
+    <dependency org="Asap" name="AsapEmitterEngine" rev="latest.${resolve.status}"/>
+    <dependency org="Asap" name="AsapMaryTTS5Binding" rev="latest.${resolve.status}"/>
+    <dependency org="Asap" name="AsapBMLFlowVisualizer" rev="latest.${resolve.status}"/>
+    <dependency org="Asap" name="AsapHumanoidBodyControl" rev="latest.${resolve.status}"/>
+    <dependency org="Asap" name="AsapHumanoidControlShared" rev="latest.${resolve.status}"/>
+    <dependency org="Asap" name="AsapHumanoidLoaderDefaults" rev="latest.${resolve.status}"/>
+    <dependency org="Asap" name="BmlScripts" rev="latest.${resolve.status}"/>
+    <!-- External jars -->
+    <dependency org="reflections" name="reflections" rev="latest.release"/>
+    <dependency org="singularsystems" name="jep" rev="latest.release"/>
+    <dependency org="slf4j" name="slf4j-api" rev="latest.release"/>
+    <dependency org="logback" name="logback-classic" rev="latest.release"/>
+    <dependency org="logback" name="logback-core" rev="latest.release"/>
+    <dependency org="google" name="guava" rev="latest.${resolve.status}"/>
+    <dependency org="junit" name="junit-dep" rev="latest.release"/>
+    <dependency org="hamcrest" name="hamcrest-all" rev="latest.release"/>
+    <dependency org="lombok" name="lombok" rev="latest.release"/>
+    <!-- Data dependencies 
+    <dependency org="marytts" name="voice-dfki-spike" rev="latest.release"/>
+    <dependency org="marytts" name="voice-dfki-prudence-hsmm" rev="latest.release"/>
+    -->
+    <dependency org="marytts" name="voice-dfki-prudence" rev="latest.release"/>
+    <dependency org="HMI" name="HmiMiddlewareAbstractionLayer" rev="latest.${resolve.status}"/>
+  </dependencies>
+</ivy-module>

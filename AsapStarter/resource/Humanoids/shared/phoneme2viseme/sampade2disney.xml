@@ -1,0 +1,61 @@
+<PhonemeToVisemeMapping>
+<!-- Just some quick guesses
+     SAMPA-en: http://www.phon.ucl.ac.uk/home/sampa/english.htm
+     disney: DisneyVisemes.java
+     -->
+    <phoneme viseme="1" phoneme="p"/>
+    <phoneme viseme="1" phoneme="b"/>
+    <phoneme viseme="2" phoneme="t"/>
+    <phoneme viseme="2" phoneme="d"/>
+    <phoneme viseme="2" phoneme="k"/>
+    <phoneme viseme="2" phoneme="g"/>
+    <phoneme viseme="3" phoneme="n"/>
+    <phoneme viseme="3" phoneme="@n"/>
+    <phoneme viseme="3" phoneme="l"/>
+    <phoneme viseme="3" phoneme="@l"/>
+    <phoneme viseme="4" phoneme="m"/>
+    <phoneme viseme="5" phoneme="pf"/>
+    <phoneme viseme="5" phoneme="f"/>
+    <phoneme viseme="5" phoneme="v"/>
+    <phoneme viseme="6" phoneme="s"/>
+    <phoneme viseme="6" phoneme="z"/>
+    <phoneme viseme="7" phoneme="S"/>
+    <phoneme viseme="7" phoneme="Z"/>
+    <phoneme viseme="7" phoneme="ts"/>
+    <phoneme viseme="7" phoneme="tS"/>
+    <phoneme viseme="7" phoneme="dZ"/>
+    <phoneme viseme="8" phoneme="h"/>
+    <phoneme viseme="8" phoneme="r"/>
+    <phoneme viseme="8" phoneme="R"/>
+    <phoneme viseme="8" phoneme="x"/>
+    <phoneme viseme="8" phoneme="N"/>
+    <phoneme viseme="9" phoneme="j"/>
+    <phoneme viseme="9" phoneme="C"/>
+    <phoneme viseme="10" phoneme="i:"/>
+    <phoneme viseme="10" phoneme="I"/>
+    <phoneme viseme="10" phoneme="e:"/>
+    <phoneme viseme="10" phoneme="E:"/>
+    <phoneme viseme="10" phoneme="E"/>
+    <phoneme viseme="11" phoneme="a:"/>
+    <phoneme viseme="11" phoneme="a:"/>
+    <phoneme viseme="11" phoneme="aU"/>
+    <phoneme viseme="11" phoneme="aI"/>
+    <phoneme viseme="12" phoneme="o:"/>
+    <phoneme viseme="12" phoneme="O"/>
+    <phoneme viseme="12" phoneme="OY"/>
+    <phoneme viseme="13" phoneme="u:"/>
+    <phoneme viseme="13" phoneme="U"/>
+    <phoneme viseme="14" phoneme="@"/>
+    <phoneme viseme="14" phoneme="6"/>
+    <phoneme viseme="15" phoneme="y:"/>
+    <phoneme viseme="15" phoneme="Y"/>
+    <phoneme viseme="15" phoneme="2:"/>
+    <phoneme viseme="15" phoneme="9"/>
+    
+    <!-- from http://mary.opendfki.de/wiki/USEnglishSAMPA -->
+    <phoneme viseme="13" phoneme="V"/>
+    <phoneme viseme="11" phoneme="{"/>
+    <phoneme viseme="11" phoneme="A"/>
+    <phoneme viseme="12" phoneme="OI"/>
+    
+</PhonemeToVisemeMapping>

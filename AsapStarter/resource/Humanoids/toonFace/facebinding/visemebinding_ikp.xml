@@ -1,0 +1,18 @@
+<VisemeToMorphMapping>
+  <Mapping viseme="0" intensity="0" target="V_SIL"/>
+  <Mapping viseme="1" target="IKP_V_P"/>
+  <Mapping viseme="2" target="IKP_V_T"/>
+  <Mapping viseme="3" target="IKP_V_N"/>
+  <Mapping viseme="4" target="IKP_V_M"/>
+  <Mapping viseme="5" target="IKP_V_F"/>
+  <Mapping viseme="6" target="IKP_V_S"/>
+  <Mapping viseme="7" target="IKP_V_Z"/>
+  <Mapping viseme="8" target="IKP_V_R"/>
+  <Mapping viseme="9" target="IKP_V_C"/>
+  <Mapping viseme="10" target="IKP_V_E"/>
+  <Mapping viseme="11" target="IKP_V_A"/>
+  <Mapping viseme="12" target="IKP_V_O"/>
+  <Mapping viseme="13" target="IKP_V_U"/>
+  <Mapping viseme="14" target="IKP_V_Q"/>
+  <Mapping viseme="15" target="IKP_V_Y"/>
+</VisemeToMorphMapping>

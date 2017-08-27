@@ -1,0 +1,54 @@
+<PhonemeToVisemeMapping>
+<!-- Just some quick guesses
+     fluency: http://www.fluency.nl/help/lexicon.htm
+     disney: DisneyVisemes.java
+     -->
+    <phoneme viseme="0" phoneme=" "/>
+    <phoneme viseme="0" phoneme="."/>
+    <phoneme viseme="0" phoneme="$"/>
+    <phoneme viseme="0" phoneme="/"/>
+    <phoneme viseme="0" phoneme="//"/>
+    <phoneme viseme="0" phoneme="///"/>
+    <phoneme viseme="21" phoneme="p"/>
+    <phoneme viseme="21" phoneme="b"/>
+    <phoneme viseme="1" phoneme="t"/>
+    <phoneme viseme="1" phoneme="d"/>
+    <phoneme viseme="20" phoneme="k"/>
+    <phoneme viseme="20" phoneme="g"/>
+    <phoneme viseme="21" phoneme="m"/>
+    <phoneme viseme="19" phoneme="n"/>
+    <phoneme viseme="1" phoneme="N"/>
+    <phoneme viseme="18" phoneme="f"/>
+    <phoneme viseme="19" phoneme="v"/>
+    <phoneme viseme="15" phoneme="s"/>
+    <phoneme viseme="15" phoneme="z"/>
+    <phoneme viseme="20" phoneme="S"/>
+    <phoneme viseme="16" phoneme="Z"/>
+    <phoneme viseme="20" phoneme="x"/>
+    <phoneme viseme="16" phoneme="G"/>
+    <phoneme viseme="12" phoneme="h"/>
+    <phoneme viseme="14" phoneme="l"/>
+    <phoneme viseme="13" phoneme="r"/>
+    <phoneme viseme="7" phoneme="w"/>
+    <phoneme viseme="6" phoneme="j"/>
+    <phoneme viseme="6" phoneme="I"/>
+    <phoneme viseme="8" phoneme="O"/>
+    <phoneme viseme="4" phoneme="E"/>
+    <phoneme viseme="2" phoneme="A"/>
+    <phoneme viseme="4" phoneme="Y"/>
+    <phoneme viseme="4" phoneme="@"/>
+    <phoneme viseme="6" phoneme="i"/>
+    <phoneme viseme="4" phoneme="u"/>
+    <phoneme viseme="4" phoneme="e"/>
+    <phoneme viseme="8" phoneme="o"/>
+    <phoneme viseme="9" phoneme="y"/>
+    <phoneme viseme="1" phoneme="a"/>
+    <phoneme viseme="8" phoneme="2"/>
+    <phoneme viseme="11" phoneme="Ei"/>
+    <phoneme viseme="10" phoneme="9y"/>
+    <phoneme viseme="8" phoneme="Au"/>
+    <phoneme viseme="8" phoneme="E~"/>
+    <phoneme viseme="4" phoneme="Y~"/>
+    <phoneme viseme="8" phoneme="O~"/>
+    <phoneme viseme="2" phoneme="A~"/>
+</PhonemeToVisemeMapping>

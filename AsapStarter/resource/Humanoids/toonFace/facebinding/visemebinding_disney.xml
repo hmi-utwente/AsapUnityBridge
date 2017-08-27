@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<VisemeToMorphMapping>
+  <Mapping viseme="0" intensity="0" target="visMBP"/>
+  <Mapping viseme="1" target="visA"/>
+  <Mapping viseme="2" target="visA"/>
+  <Mapping viseme="3" target="visA"/>
+  <Mapping viseme="4" target="visE"/>
+  <Mapping viseme="5" target="visE"/>
+  <Mapping viseme="6" target="visE"/>
+  <Mapping viseme="7" target="visW"/>
+  <Mapping viseme="8" target="visO"/>
+  <Mapping viseme="9" target="visA"/>
+  <Mapping viseme="10" target="visO"/>
+  <Mapping viseme="11" target="visA"/>
+  <Mapping viseme="12" target="visA"/>
+  <Mapping viseme="13" target="visA"/>
+  <Mapping viseme="14" target="visLN"/>
+  <Mapping viseme="15" target="visFV"/>
+  <Mapping viseme="16" target="visUQ"/>
+  <Mapping viseme="17" target="visTS"/>
+  <Mapping viseme="18" target="visFV"/>
+  <Mapping viseme="19" target="visLN"/>
+  <Mapping viseme="20" target="visLN"/>
+  <Mapping viseme="21" target="visMBP"/>
+</VisemeToMorphMapping>

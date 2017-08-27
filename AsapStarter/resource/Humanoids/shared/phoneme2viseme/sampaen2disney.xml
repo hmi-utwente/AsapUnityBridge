@@ -1,0 +1,55 @@
+<PhonemeToVisemeMapping>
+<!-- Just some quick guesses
+     SAMPA-en: http://www.phon.ucl.ac.uk/home/sampa/english.htm
+     disney: DisneyVisemes.java
+     -->
+    <phoneme viseme="21" phoneme="p"/>
+    <phoneme viseme="21" phoneme="b"/>
+    <phoneme viseme="19" phoneme="t"/>
+    <phoneme viseme="19" phoneme="d"/>
+    <phoneme viseme="20" phoneme="k"/>
+    <phoneme viseme="20" phoneme="g"/>
+    <phoneme viseme="16" phoneme="tS"/>
+    <phoneme viseme="16" phoneme="dZ"/>
+    <phoneme viseme="18" phoneme="f"/>
+    <phoneme viseme="18" phoneme="v"/>
+    <phoneme viseme="19" phoneme="T"/>
+    <phoneme viseme="19" phoneme="D"/>
+    <phoneme viseme="15" phoneme="s"/>
+    <phoneme viseme="15" phoneme="z"/>
+    <phoneme viseme="15" phoneme="S"/>
+    <phoneme viseme="15" phoneme="Z"/>
+    <phoneme viseme="12" phoneme="h"/>
+    <phoneme viseme="21" phoneme="m"/>
+    <phoneme viseme="19" phoneme="n"/>
+    <phoneme viseme="19" phoneme="N"/>
+    <phoneme viseme="13" phoneme="r"/>
+    <phoneme viseme="14" phoneme="l"/>
+    <phoneme viseme="7" phoneme="w"/>
+    <phoneme viseme="16" phoneme="j"/>
+    <phoneme viseme="6" phoneme="I"/>
+    <phoneme viseme="4" phoneme="e"/>
+    <phoneme viseme="4" phoneme="E"/>
+    <phoneme viseme="4" phoneme="E:"/>
+    <phoneme viseme="2" phoneme="{"/>
+    <phoneme viseme="8" phoneme="Q"/>
+    <phoneme viseme="4" phoneme="V"/>
+    <phoneme viseme="7" phoneme="U"/>
+    <phoneme viseme="1" phoneme="@"/>
+    <phoneme viseme="6" phoneme="i:"/>
+    <phoneme viseme="6" phoneme="eI"/>
+    <phoneme viseme="11" phoneme="aI"/>
+    <phoneme viseme="6" phoneme="OI"/>
+    <phoneme viseme="7" phoneme="u:"/>
+    <phoneme viseme="8" phoneme="@U"/>
+    <phoneme viseme="3" phoneme="aU"/>
+    <phoneme viseme="5" phoneme="3:"/>
+    <phoneme viseme="2" phoneme="A:"/>
+    <phoneme viseme="2" phoneme="A"/>
+    <phoneme viseme="3" phoneme="O:"/>
+    <phoneme viseme="4" phoneme="I@"/>
+    <phoneme viseme="1" phoneme="e@"/>
+    <phoneme viseme="8" phoneme="U@"/>
+    <phoneme viseme="1" phoneme="i"/>
+    <phoneme viseme="7" phoneme="u"/>
+</PhonemeToVisemeMapping>
