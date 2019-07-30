@@ -41,7 +41,7 @@ public class UnityAsapStarter {
 	    StatusPrinter.printInCaseOfErrorsOrWarnings(context);
 	    
 		String help = "Expecting commandline arguments in the form of \"-<argname> <arg>\".\nAccepting the following argnames: agentspec";
-        String spec = "Unity/agentspecs/uma_f.xml";
+        String spec = "Unity/agentspecs/blueguy.xml";
         if(args.length % 2 != 0) {
         	logger.info(help);
         	System.exit(0);

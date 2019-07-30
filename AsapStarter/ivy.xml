@@ -5,12 +5,11 @@
     <include file="${ivy.settings.dir}/configurations.xml"/>
   </configurations>
   <dependencies>
-    <dependency org="saiba" name="openbmlparser" rev="latest.release"/>
     <dependency org="HMI" name="HmiXml" transitive="false" rev="latest.${resolve.status}"/>
     <dependency org="HMI" name="HmiUtil" rev="latest.${resolve.status}"/>
     <dependency org="HMI" name="HmiTTS" rev="latest.${resolve.status}"/>
+    <dependency org="HMI" name="HmiNeurophysics" rev="latest.${resolve.status}" />
     <dependency org="HMI" name="HmiTTSFluency8" rev="latest.${resolve.status}"/>
-    <dependency org="HMI" name="HmiTTSSapi5" rev="latest.${resolve.status}"/>
     <dependency org="HMI" name="HmiTTSnative" rev="latest.release"/>
     <dependency org="HMI" name="HmiJComponentEnvironment" rev="latest.${resolve.status}"/>
     <dependency org="HMI" name="HmiTTSMary5" rev="latest.${resolve.status}"/>
@@ -19,7 +18,6 @@
     <dependency org="HMI" name="HmiEnvironmentBase" rev="latest.${resolve.status}"/>
     <dependency org="HMI" name="HmiFaceEmbodiments" rev="latest.${resolve.status}"/>
     <dependency org="HMI" name="HmiHeadAndGazeEmbodiments" rev="latest.${resolve.status}"/>
-    <dependency org="HMI" name="HmiTextEmbodiments" rev="latest.${resolve.status}"/>
     <dependency org="HMI" name="HmiPhysics" rev="latest.${resolve.status}"/>
     <dependency org="HMI" name="HmiPhysicsEmbodiments" rev="latest.${resolve.status}"/>
     <dependency org="HMI" name="HmiPhysicsEnvironment" rev="latest.${resolve.status}"/>
@@ -36,46 +34,103 @@
     <dependency org="HMI" name="HmiFlipper" rev="latest.${resolve.status}"/>
     <dependency org="HMI" name="HmiFlipperMiddlewareExtension" rev="latest.${resolve.status}"/>
     <dependency org="HMI" name="LogbackConfigs" rev="latest.${resolve.status}"/>
-    <dependency org="HMI" name="HmiUnityEmbodiments" rev="latest.${resolve.status}"/>
     <dependency org="Asap" name="AsapFluency8TTSBinding" rev="latest.${resolve.status}"/>
     <dependency org="Asap" name="AsapSapi5TTSBinding" rev="latest.${resolve.status}"/>
-    <dependency org="Asap" name="AsapAnimationEngine" rev="latest.${resolve.status}"/>
-    <dependency org="Asap" name="AsapMiddlewareEngine" rev="latest.${resolve.status}"/>
-    <dependency org="Asap" name="AsapEnvironment" rev="latest.${resolve.status}"/>
-    <dependency org="Asap" name="AsapBML" rev="latest.${resolve.status}"/>
     <dependency org="Asap" name="AsapRealizerPort" rev="latest.${resolve.status}"/>
-    <dependency org="Asap" name="AsapRealizer" rev="latest.${resolve.status}"/>
     <dependency org="Asap" name="AsapRealizerEmbodiments" rev="latest.${resolve.status}"/>
     <dependency org="Asap" name="AsapMiddlewareRealizerAdapters" rev="latest.${resolve.status}"/>
     <dependency org="Asap" name="AsapMURML" rev="latest.${resolve.status}"/>
     <dependency org="Asap" name="AsapFaceEngine" rev="latest.${resolve.status}"/>
     <dependency org="Asap" name="AsapAudioEngine" rev="latest.${resolve.status}"/>
-    <dependency org="Asap" name="AsapSpeechEngine" rev="latest.${resolve.status}"/>
-    <dependency org="Asap" name="AsapTextEngine" rev="latest.${resolve.status}"/>
     <dependency org="Asap" name="AsapLiveMocapEngine" rev="latest.${resolve.status}"/>
     <dependency org="Asap" name="AsapPictureEngine" rev="latest.${resolve.status}"/>
-    <dependency org="Asap" name="AsapEmitterEngine" rev="latest.${resolve.status}"/>
     <dependency org="Asap" name="AsapMaryTTS5Binding" rev="latest.${resolve.status}"/>
     <dependency org="Asap" name="AsapBMLFlowVisualizer" rev="latest.${resolve.status}"/>
     <dependency org="Asap" name="AsapHumanoidBodyControl" rev="latest.${resolve.status}"/>
     <dependency org="Asap" name="AsapHumanoidControlShared" rev="latest.${resolve.status}"/>
     <dependency org="Asap" name="AsapHumanoidLoaderDefaults" rev="latest.${resolve.status}"/>
     <dependency org="Asap" name="BmlScripts" rev="latest.${resolve.status}"/>
+
     <!-- External jars -->
-    <dependency org="reflections" name="reflections" rev="latest.release"/>
-    <dependency org="singularsystems" name="jep" rev="latest.release"/>
-    <dependency org="slf4j" name="slf4j-api" rev="latest.release"/>
-    <dependency org="logback" name="logback-classic" rev="latest.release"/>
-    <dependency org="logback" name="logback-core" rev="latest.release"/>
-    <dependency org="google" name="guava" rev="latest.${resolve.status}"/>
-    <dependency org="junit" name="junit-dep" rev="latest.release"/>
-    <dependency org="hamcrest" name="hamcrest-all" rev="latest.release"/>
-    <dependency org="lombok" name="lombok" rev="latest.release"/>
-    <!-- Data dependencies 
+
+    <dependency org="slf4j"				name="slf4j-api"		rev="latest.${resolve.status}" />
+    <dependency org="logback"			name="logback-classic"	rev="latest.${resolve.status}" />
+    <dependency org="logback"			name="logback-core"		rev="latest.${resolve.status}" />
+    <dependency org="google"			name="guava"			rev="latest.${resolve.status}" />
+    <dependency org="junit"				name="junit-dep"		rev="latest.${resolve.status}" />
+    <dependency org="hamcrest"			name="hamcrest-all"		rev="latest.${resolve.status}" />
+    <dependency org="lombok"			name="lombok"			rev="latest.${resolve.status}" />
+    <dependency org="reflections"		name="reflections"		rev="latest.${resolve.status}" />
+    <dependency org="singularsystems"	name="jep"				rev="latest.${resolve.status}" />
+	<dependency org="apache"			name="activemq-nolog"	rev="latest.${resolve.status}" />
+    <dependency org="fest"				name="fest-swing"		rev="latest.${resolve.status}" />
+	<dependency org="odejava"			name="odejava"			rev="latest.${resolve.status}" />
+	<dependency org="lwjgl"				name="lwjgl"			rev="latest.${resolve.status}" />
+	<dependency org="jcip"				name="jcip-annotations"	rev="latest.${resolve.status}" />
+    <dependency org="findbugs"			name="annotations"		rev="latest.release" />
+
+    <!-- Data dependencies -->
     <dependency org="marytts" name="voice-dfki-spike" rev="latest.release"/>
     <dependency org="marytts" name="voice-dfki-prudence-hsmm" rev="latest.release"/>
-    -->
     <dependency org="marytts" name="voice-dfki-prudence" rev="latest.release"/>
+
+	  
+	<!-- Maven dependencies: -->
+	<dependency org="com.fasterxml.jackson.core"		name="jackson-core"				rev="2.9.8" />
+	<dependency org="com.fasterxml.jackson.core"		name="jackson-databind"			rev="2.9.8" />
+	<dependency org="com.fasterxml.jackson.core"		name="jackson-annotations"		rev="2.9.8" />
+	<dependency org="com.fasterxml.jackson.dataformat"	name="jackson-dataformat-xml"	rev="2.9.8" />
+	<dependency org="org.apache.commons"				name="commons-lang3"			rev="3.8.1" />
+	<dependency org="javax.json"						name="javax.json-api"			rev="1.0" />
+	<dependency org="org.glassfish"						name="javax.json"				rev="1.1.4" />
+	<dependency org="org.jfree"							name="jfreechart"				rev="1.0.19" />
+	<dependency org="com.github.jknack"					name="handlebars"				rev="4.1.2"/>
+	<dependency org="com.github.jknack"					name="handlebars-jackson2"		rev="4.1.2"/>
+
+	<!-- Maven dependencies: -->
+	<dependency org="com.fasterxml.jackson.core"		name="jackson-core"				rev="2.9.8" />
+	<dependency org="com.fasterxml.jackson.core"		name="jackson-databind"			rev="2.9.8" />
+	<dependency org="com.fasterxml.jackson.core"		name="jackson-annotations"		rev="2.9.8" />
+	<dependency org="com.fasterxml.jackson.dataformat"	name="jackson-dataformat-xml"	rev="2.9.8" />
+	<dependency org="org.apache.commons"				name="commons-lang3"			rev="3.8.1" />
+	<dependency org="javax.json"						name="javax.json-api"			rev="1.0" />
+	<dependency org="org.glassfish"						name="javax.json"				rev="1.1.4" />
+	<dependency org="org.jfree"							name="jfreechart"				rev="1.0.19" />
+	<dependency org="com.github.jknack"					name="handlebars"				rev="4.1.2"/>
+	<dependency org="com.github.jknack"					name="handlebars-jackson2"		rev="4.1.2"/>
+
+    <!-- Beta Dependencies not on repos yet -->
+	<exclude module="AsapUnityResources" />
+	<exclude module="AsapBML" />
+	<exclude module="AsapAnimationEngine" />
+	<exclude module="AsapActiveMQRealizerAdapters" />
+	<exclude module="AsapMiddlewareEngine" />
+	<exclude module="AsapSpeechEngine" />
+	<exclude module="AsapEmitterEngine" />
+	<exclude module="HmiTTSSapi5" />
+	<exclude module="AsapRealizer" />
+	<exclude module="HmiMiddlewareAudioEnvironment" />
+	<exclude module="openbmlparser" />
+	<exclude module="AsapEnvironment" />
+	<exclude module="HmiAnimation" />
+	<exclude module="HmiMiddlewareAbstractionLayer" />
+	<exclude module="AsapTextEngine" />
+	<exclude module="HmiUnityEmbodiments" />
+	<exclude module="HmiTextEmbodiments" />
+    <!--
+    <dependency org="Asap" name="AsapBML" rev="latest.${resolve.status}"/>
+    <dependency org="Asap" name="AsapAnimationEngine" rev="latest.${resolve.status}"/>
+    <dependency org="Asap" name="AsapMiddlewareEngine" rev="latest.${resolve.status}"/>
+    <dependency org="Asap" name="AsapSpeechEngine" rev="latest.${resolve.status}"/>
+    <dependency org="Asap" name="AsapEmitterEngine" rev="latest.${resolve.status}"/>
+    <dependency org="HMI" name="HmiTTSSapi5" rev="latest.${resolve.status}"/>
+    <dependency org="Asap" name="AsapRealizer" rev="latest.${resolve.status}"/>
+    <dependency org="saiba" name="openbmlparser" rev="latest.release"/>
+    <dependency org="Asap" name="AsapEnvironment" rev="latest.${resolve.status}"/>
     <dependency org="HMI" name="HmiMiddlewareAbstractionLayer" rev="latest.${resolve.status}"/>
+    <dependency org="Asap" name="AsapTextEngine" rev="latest.${resolve.status}"/>
+    <dependency org="HMI" name="HmiUnityEmbodiments" rev="latest.${resolve.status}"/>
+    <dependency org="HMI" name="HmiTextEmbodiments" rev="latest.${resolve.status}"/>
+    -->
   </dependencies>
 </ivy-module>

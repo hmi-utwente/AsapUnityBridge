@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<AsapVirtualHuman id="BlueGuy">
+  <Loader id="realizer" loader="asap.realizerembodiments.AsapRealizerEmbodiment">
+    <BMLParser>
+      <BMLAttributeExtension class="asap.bml.ext.bmla.BMLABMLBehaviorAttributes"/>
+    </BMLParser>
+    <BMLScheduler>
+      <SchedulingHandler class="asap.realizer.scheduler.BMLASchedulingHandler" schedulingStrategy="asap.realizer.scheduler.SortedSmartBodySchedulingStrategy"/>
+    </BMLScheduler>
+    <PipeLoader id="visualizerpipe" loader="asap.bmlflowvisualizer.loader.AsapBMLFlowVisualizerPortLoader"/>
+    <PipeLoader id="pipe" loader="asap.middlewareadapters.loader.MiddlewareToBMLRealizerAdapterLoader">
+      <MiddlewareOptions loaderclass="nl.utwente.hmi.middleware.udp.UDPMultiClientMiddlewareLoader">
+        <MiddlewareProperty name="port" value="6662"/>
+      </MiddlewareOptions>
+    </PipeLoader>
+  </Loader>
+
+  <!-- ASAP GUI for sending bml -->
+  <Loader id="guiembodiment" loader="asap.realizerembodiments.JFrameEmbodiment">
+    <BmlUI demoscriptresources="Unity/testbml"/>
+    <FeedbackUI/>
+  </Loader>
+
+  <!-- Load embodiment(s) specification "remotely", from unity -->
+  <Loader id="unityembodiment" loader="hmi.unityembodiments.loader.UnityEmbodimentLoader">
+    <MiddlewareOptions loaderclass="nl.utwente.hmi.middleware.udp.UDPMultiClientMiddlewareLoader">
+      <MiddlewareProperty name="port" value="6652"/>
+    </MiddlewareOptions>
+  </Loader>
+
+  <Loader id="mixedskeletonembodiment" loader="hmi.physicsenvironment.MixedSkeletonEmbodimentLoader" requiredloaders="unityembodiment"/>
+  <Loader id="physicalembodiment" loader="hmi.physicsenvironment.OdePhysicalEmbodiment" requiredloaders="mixedskeletonembodiment">
+  </Loader>
+  <Loader id="animationengine" loader="asap.animationengine.loader.MixedAnimationEngineLoader" requiredloaders="mixedskeletonembodiment,physicalembodiment">
+    <GestureBinding basedir="" resources="Humanoids/blueguy/" filename="gesturebinding.xml"/>
+	<!--
+    <Hns resources="Humanoids/armandia/hns" filename="hns_armandia.xml"/>
+    <HnsHandShape dir="Humanoids/shared/handshapes"/>
+	-->
+  </Loader>
+  <!--
+  -->
+  <Loader id="faceengine" loader="asap.faceengine.loader.FaceEngineLoader" requiredloaders="unityembodiment">
+    <FaceBinding basedir="" resources="Humanoids/toonFace/facebinding/" filename="facebinding.xml" />
+  </Loader>
+
+  <Loader id="facelipsync" requiredloaders="faceengine" loader="asap.faceengine.loader.TimedFaceUnitLipSynchProviderLoader">
+    <MorphVisemeBinding resources="Humanoids/toonFace/facebinding/" filename="visemebinding_disney.xml"/>
+  </Loader>
+
+  <Loader id="ttsbinding" loader="asap.marytts5binding.loader.MaryTTSBindingLoader">
+    <PhonemeToVisemeMapping resources="Humanoids/shared/phoneme2viseme/" filename="sampaen2disney.xml"/>
+  </Loader>
+
+  <Loader id="speechengine" loader="asap.speechengine.loader.SpeechEngineLoader" requiredloaders="ttsbinding,facelipsync">
+    <Voice factory="WAV_TTS" voicename="dfki-prudence"/>
+  </Loader>
+
+  <!-- Engine for playing audio files, nice for sound effects (e.g., clapping) or for prerecorded speech fragments -->
+  <Loader id="audioengine" loader="asap.audioengine.loader.AudioEngineLoader"/>
+</AsapVirtualHuman>

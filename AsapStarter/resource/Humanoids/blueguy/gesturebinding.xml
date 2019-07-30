@@ -1,0 +1,1321 @@
+<?xml version="1.0"?>
+<gesturebinding>
+
+
+  <RestGazeSpec>
+    <constraints/>
+    <parametermap>
+      <parameter src="target" dst="target"/>
+      <parameter src="influence" dst="influence"/>
+      <parameter src="offsetDirection" dst="offsetdirection"/>
+      <parameter src="offsetAngle" dst="offsetangle"/>
+    </parametermap>
+    <parameterdefaults>                    
+      </parameterdefaults>
+    <RestGaze type="class" class="asap.animationengine.gaze.DynamicRestGaze"/>
+  </RestGazeSpec>
+  <RestPoseSpec>
+    <constraints>
+      <constraint name="stance" value="TEST"/>
+    </constraints>
+    <RestPose type="SkeletonPose" file="Humanoids/uma/restposes/resthips.xml"/>
+  </RestPoseSpec>
+  <RestPoseSpec>
+    <constraints>
+      <constraint name="stance" value="STANDING"/>
+    </constraints>
+    <RestPose type="SkeletonPose" file="Humanoids/uma/restposes/standing.xml"/>
+  </RestPoseSpec>
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="breathe"/>
+    </constraints>
+    <parametermap>
+      <parameter src="amount" dst="a"/>
+    </parametermap>
+    <parameterdefaults>
+      <parameterdefault name="a" value="1"/>
+    </parameterdefaults>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/breathe_clavicular.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="deictic_self"/>
+    </constraints>
+    <parametermap>			
+		</parametermap>
+    <parameterdefaults>
+      <parameterdefault name="file" value="Humanoids/shared/procanimation/greta/deictic_self.xml"/>
+      <parameterdefault name="postStrokeHoldDuration" value="0.2"/>
+    </parameterdefaults>
+    <MotionUnit type="Gesture" class="asap.animationengine.procanimation.ProcAnimationGestureMU"/>
+  </MotionUnitSpec>
+  <TimedMotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="wave"/>
+    </constraints>
+    <parametermap>
+		</parametermap>
+    <parameterdefaults>
+		</parameterdefaults>
+    <TimedMotionUnit type="MURML">
+      <murml-description xmlns="http://www.techfak.uni-bielefeld.de/ags/soa/murml">
+        <dynamic>
+          <keyframing>
+            <phase>
+              <frame ftime="1">
+                <posture>Humanoid (r_shoulder 3 -33 -25 -25) (r_elbow 3 0 -91 0) (r_sternoclavicular 3 0 -17 -15) </posture>
+              </frame>
+              <frame ftime="1.4">
+                <posture>Humanoid (r_shoulder 3 -33 -25 -25) (r_elbow 3 0 -110 0) (r_sternoclavicular 3 0 -17 -15) </posture>
+              </frame>
+              <frame ftime="1.8">
+                <posture>Humanoid (r_shoulder 3 -33 -25 -25) (r_elbow 3 0 -91 0) (r_sternoclavicular 3 0 -17 -15) </posture>
+              </frame>
+              <frame ftime="2.2">
+                <posture>Humanoid (r_shoulder 3 -33 -25 -25) (r_elbow 3 0 -110 0) (r_sternoclavicular 3 0 -17 -15) </posture>
+              </frame>
+              <frame ftime="2.6">
+                <posture>Humanoid (r_shoulder 3 -33 -25 -25) (r_elbow 3 0 -91 0) (r_sternoclavicular 3 0 -17 -15) </posture>
+              </frame>
+              <frame ftime="2.8">
+                <posture>Humanoid (r_shoulder 3 -33 -25 -25) (r_elbow 3 0 -91 0) (r_sternoclavicular 3 0 -17 -15) </posture>
+              </frame>
+            </phase>
+          </keyframing>
+        </dynamic>
+      </murml-description>
+    </TimedMotionUnit>
+  </TimedMotionUnitSpec>
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="conduct-3-beat"/>
+      <constraint name="mode" value="RIGHT_HAND"/>
+    </constraints>
+    <parametermap>			
+	</parametermap>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/conductor/3-beat_pattern_RH.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="conduct-3-beat"/>
+      <constraint name="mode" value="LEFT_HAND"/>
+    </constraints>
+    <parameterdefaults>
+      <parameterdefault name="mirror" value="true"/>
+      <parameterdefault name="joints" value="l_shoulder"/>
+    </parameterdefaults>
+    <parametermap>			
+	</parametermap>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/conductor/3-beat_pattern_RH.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="noise" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="type" value="perlin"/>
+    </constraints>
+    <parametermap>
+      <parameter src="joint" dst="joint"/>
+      <parameter src="baseamplitudex" dst="baseamplitudex"/>
+      <parameter src="baseamplitudey" dst="baseamplitudey"/>
+      <parameter src="baseamplitudez" dst="baseamplitudez"/>
+      <parameter src="offsetx" dst="offsetx"/>
+      <parameter src="offsety" dst="offsety"/>
+      <parameter src="offsetz" dst="offsetz"/>
+      <parameter src="basefreqx" dst="basefreqx"/>
+      <parameter src="basefreqy" dst="basefreqy"/>
+      <parameter src="basefreqz" dst="basefreqz"/>
+      <parameter src="persistencex" dst="persistencex"/>
+      <parameter src="persistencey" dst="persistencey"/>
+      <parameter src="persistencez" dst="persistencez"/>
+    </parametermap>
+    <MotionUnit type="class" class="asap.animationengine.noise.PerlinNoiseMU"/>
+  </MotionUnitSpec>
+  <!-- 
+Greta beat and conduit gestures:
+BEAT (LEFT|BOTH|RIGHT|-)
+CONDUIT (BOTH|-) 
+-->
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="BEAT"/>
+      <constraint name="mode" value="RIGHT_HAND"/>
+    </constraints>
+    <parametermap>			
+		</parametermap>
+    <parameterdefaults>
+      <parameterdefault name="file" value="Humanoids/armandia/procanimation/greta/beat1right_norest.xml"/>
+      <parameterdefault name="postStrokeHoldDuration" value="0.2"/>
+    </parameterdefaults>
+    <MotionUnit type="Gesture" class="asap.animationengine.procanimation.ProcAnimationGestureMU"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="BEAT"/>
+      <constraint name="mode" value="LEFT_HAND"/>
+    </constraints>
+    <parametermap>			  
+		</parametermap>
+    <parameterdefaults>
+      <parameterdefault name="file" value="Humanoids/armandia/procanimation/greta/beat3left_norest.xml"/>
+      <parameterdefault name="postStrokeHoldDuration" value="0.2"/>
+    </parameterdefaults>
+    <MotionUnit type="Gesture" class="asap.animationengine.procanimation.ProcAnimationGestureMU"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="BEAT"/>
+      <constraint name="mode" value="BOTH_HANDS"/>
+    </constraints>
+    <parametermap>			
+		</parametermap>
+    <parameterdefaults>
+      <parameterdefault name="file" value="Humanoids/armandia/procanimation/greta/beat2both_norest.xml"/>
+      <parameterdefault name="postStrokeHoldDuration" value="0.2"/>
+    </parameterdefaults>
+    <MotionUnit type="Gesture" class="asap.animationengine.procanimation.ProcAnimationGestureMU"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="BEAT"/>
+    </constraints>
+    <parametermap>			
+		</parametermap>
+    <parameterdefaults>
+      <parameterdefault name="file" value="Humanoids/armandia/procanimation/greta/beat4both_norest.xml"/>
+      <parameterdefault name="postStrokeHoldDuration" value="0.2"/>
+    </parameterdefaults>
+    <MotionUnit type="Gesture" class="asap.animationengine.procanimation.ProcAnimationGestureMU"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="CONDUIT"/>
+      <constraint name="hand" value="BOTH_HANDS"/>
+    </constraints>
+    <parametermap>			
+		</parametermap>
+    <parameterdefaults>
+      <parameterdefault name="file" value="Humanoids/armandia/procanimation/greta/beat2both_norest.xml"/>
+      <parameterdefault name="postStrokeHoldDuration" value="0.2"/>
+    </parameterdefaults>
+    <MotionUnit type="Gesture" class="asap.animationengine.procanimation.ProcAnimationGestureMU"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="CONDUIT"/>
+    </constraints>
+    <parametermap>			
+		</parametermap>
+    <parameterdefaults>
+      <parameterdefault name="file" value="Humanoids/armandia/procanimation/greta/beat1both_norest.xml"/>
+      <parameterdefault name="postStrokeHoldDuration" value="0.2"/>
+    </parameterdefaults>
+    <MotionUnit type="Gesture" class="asap.animationengine.procanimation.ProcAnimationGestureMU"/>
+  </MotionUnitSpec>
+  
+  
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="thinkinghands"/>
+    </constraints>
+    <parametermap>			
+		</parametermap>
+    <parameterdefaults>
+      <parameterdefault name="file" value="Humanoids/uma/procanimation/ThinkingHands.xml"/>
+      <parameterdefault name="postStrokeHoldDuration" value="0.2"/>
+    </parameterdefaults>
+    <MotionUnit type="Gesture" class="asap.animationengine.procanimation.ProcAnimationGestureMU"/>
+  </MotionUnitSpec>
+  
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="pointovershoulder"/>
+    </constraints>
+    <parametermap>			
+		</parametermap>
+    <parameterdefaults>
+      <parameterdefault name="file" value="Humanoids/uma/procanimation/PointOverShoulder.xml"/>
+      <parameterdefault name="postStrokeHoldDuration" value="0.2"/>
+    </parameterdefaults>
+    <MotionUnit type="Gesture" class="asap.animationengine.procanimation.ProcAnimationGestureMU"/>
+  </MotionUnitSpec>
+  
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="pointaround"/>
+    </constraints>
+    <parametermap>			
+		</parametermap>
+    <parameterdefaults>
+      <parameterdefault name="file" value="Humanoids/uma/procanimation/PointAround.xml"/>
+      <parameterdefault name="postStrokeHoldDuration" value="0.2"/>
+    </parameterdefaults>
+    <MotionUnit type="Gesture" class="asap.animationengine.procanimation.ProcAnimationGestureMU"/>
+  </MotionUnitSpec>
+  
+  
+  <!-- LEXICALIZED GRETA GESTURES -->
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="greta_reset_hand"/>
+      <constraint name="mode" value="LEFT_HAND"/>
+    </constraints>
+    <parametermap>			
+		</parametermap>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/greta/reset_l_hand.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="type" value="LEXICALIZED"/>
+      <constraint name="lexeme" value="greta_reset_hand"/>
+      <constraint name="hand" value="RIGHT"/>
+    </constraints>
+    <parametermap>			
+		</parametermap>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/greta/reset_r_hand.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="greta_reset_hand"/>
+      <constraint name="mode" value="BOTH_HANDS"/>
+    </constraints>
+    <parametermap>			
+		</parametermap>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/greta/reset_lr_hand.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="greta_reset_hand"/>
+    </constraints>
+    <parametermap>			
+		</parametermap>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/greta/reset_lr_hand.xml"/>
+  </MotionUnitSpec>
+  
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="greta_beat1"/>
+      <constraint name="mode" value="RIGHT_HAND"/>
+    </constraints>
+    <parametermap>			
+		</parametermap>
+    <parameterdefaults>
+      <parameterdefault name="file" value="Humanoids/armandia/procanimation/greta/beat1right_norest.xml"/>
+      <parameterdefault name="postStrokeHoldDuration" value="0.2"/>
+    </parameterdefaults>
+    <MotionUnit type="Gesture" class="asap.animationengine.procanimation.ProcAnimationGestureMU"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="greta_beat1"/>
+      <constraint name="mode" value="BOTH_HANDS"/>
+    </constraints>
+    <parametermap>			
+		</parametermap>
+    <parameterdefaults>
+      <parameterdefault name="file" value="Humanoids/armandia/procanimation/greta/beat1both_norest.xml"/>
+      <parameterdefault name="postStrokeHoldDuration" value="0.2"/>
+    </parameterdefaults>
+    <MotionUnit type="Gesture" class="asap.animationengine.procanimation.ProcAnimationGestureMU"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="greta_beat1"/>
+      <constraint name="mode" value="LEFT_HAND"/>
+    </constraints>
+    <parametermap>			
+		</parametermap>
+    <parameterdefaults>
+      <parameterdefault name="file" value="Humanoids/armandia/procanimation/greta/beat1left_norest.xml"/>
+      <parameterdefault name="postStrokeHoldDuration" value="0.2"/>
+    </parameterdefaults>
+    <MotionUnit type="Gesture" class="asap.animationengine.procanimation.ProcAnimationGestureMU"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="greta_beat1"/>
+    </constraints>
+    <parametermap>			
+		</parametermap>
+    <parameterdefaults>
+      <parameterdefault name="file" value="Humanoids/armandia/procanimation/greta/beat1both_norest.xml"/>
+      <parameterdefault name="postStrokeHoldDuration" value="0.2"/>
+    </parameterdefaults>
+    <MotionUnit type="Gesture" class="asap.animationengine.procanimation.ProcAnimationGestureMU"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="greta_beat2"/>
+      <constraint name="mode" value="RIGHT_HAND"/>
+    </constraints>
+    <parametermap>			
+		</parametermap>
+    <parameterdefaults>
+      <parameterdefault name="file" value="Humanoids/armandia/procanimation/greta/beat2right_norest.xml"/>
+      <parameterdefault name="postStrokeHoldDuration" value="0.2"/>
+    </parameterdefaults>
+    <MotionUnit type="Gesture" class="asap.animationengine.procanimation.ProcAnimationGestureMU"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="greta_beat2"/>
+      <constraint name="mode" value="BOTH_HANDS"/>
+    </constraints>
+    <parametermap>			
+		</parametermap>
+    <parameterdefaults>
+      <parameterdefault name="file" value="Humanoids/armandia/procanimation/greta/beat2both_norest.xml"/>
+      <parameterdefault name="postStrokeHoldDuration" value="0.2"/>
+    </parameterdefaults>
+    <MotionUnit type="Gesture" class="asap.animationengine.procanimation.ProcAnimationGestureMU"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="greta_beat2"/>
+      <constraint name="mode" value="LEFT_HAND"/>
+    </constraints>
+    <parametermap>			
+		</parametermap>
+    <parameterdefaults>
+      <parameterdefault name="file" value="Humanoids/armandia/procanimation/greta/beat2left_norest.xml"/>
+      <parameterdefault name="postStrokeHoldDuration" value="0.2"/>
+    </parameterdefaults>
+    <MotionUnit type="Gesture" class="asap.animationengine.procanimation.ProcAnimationGestureMU"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="greta_beat2"/>
+    </constraints>
+    <parametermap>			
+		</parametermap>
+    <parameterdefaults>
+      <parameterdefault name="file" value="Humanoids/armandia/procanimation/greta/beat2both_norest.xml"/>
+      <parameterdefault name="postStrokeHoldDuration" value="0.2"/>
+    </parameterdefaults>
+    <MotionUnit type="Gesture" class="asap.animationengine.procanimation.ProcAnimationGestureMU"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="greta_beat3"/>
+      <constraint name="mode" value="RIGHT_HAND"/>
+    </constraints>
+    <parametermap>			
+		</parametermap>
+    <parameterdefaults>
+      <parameterdefault name="file" value="Humanoids/armandia/procanimation/greta/beat3right_norest.xml"/>
+      <parameterdefault name="postStrokeHoldDuration" value="0.2"/>
+    </parameterdefaults>
+    <MotionUnit type="Gesture" class="asap.animationengine.procanimation.ProcAnimationGestureMU"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="greta_beat3"/>
+      <constraint name="mode" value="BOTH_HANDS"/>
+    </constraints>
+    <parametermap>			
+		</parametermap>
+    <parameterdefaults>
+      <parameterdefault name="file" value="Humanoids/armandia/procanimation/greta/beat3both_norest.xml"/>
+      <parameterdefault name="postStrokeHoldDuration" value="0.2"/>
+    </parameterdefaults>
+    <MotionUnit type="Gesture" class="asap.animationengine.procanimation.ProcAnimationGestureMU"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="greta_beat3"/>
+      <constraint name="mode" value="LEFT_HAND"/>
+    </constraints>
+    <parametermap>			
+		</parametermap>
+    <parameterdefaults>
+      <parameterdefault name="file" value="Humanoids/armandia/procanimation/greta/beat3left_norest.xml"/>
+      <parameterdefault name="postStrokeHoldDuration" value="0.2"/>
+    </parameterdefaults>
+    <MotionUnit type="Gesture" class="asap.animationengine.procanimation.ProcAnimationGestureMU"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="greta_beat3"/>
+    </constraints>
+    <parametermap>			
+		</parametermap>
+    <parameterdefaults>
+      <parameterdefault name="file" value="Humanoids/armandia/procanimation/greta/beat3both_norest.xml"/>
+      <parameterdefault name="postStrokeHoldDuration" value="0.2"/>
+    </parameterdefaults>
+    <MotionUnit type="Gesture" class="asap.animationengine.procanimation.ProcAnimationGestureMU"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="greta_beat4"/>
+      <constraint name="mode" value="RIGHT_HAND"/>
+    </constraints>
+    <parametermap>			
+		</parametermap>
+    <parameterdefaults>
+      <parameterdefault name="file" value="Humanoids/armandia/procanimation/greta/beat4right_norest.xml"/>
+      <parameterdefault name="postStrokeHoldDuration" value="0.2"/>
+    </parameterdefaults>
+    <MotionUnit type="Gesture" class="asap.animationengine.procanimation.ProcAnimationGestureMU"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="greta_beat4"/>
+      <constraint name="mode" value="BOTH_HANDS"/>
+    </constraints>
+    <parametermap>			
+		</parametermap>
+    <parameterdefaults>
+      <parameterdefault name="file" value="Humanoids/armandia/procanimation/greta/beat4both_norest.xml"/>
+      <parameterdefault name="postStrokeHoldDuration" value="0.2"/>
+    </parameterdefaults>
+    <MotionUnit type="Gesture" class="asap.animationengine.procanimation.ProcAnimationGestureMU"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="greta_beat4"/>
+      <constraint name="mode" value="LEFT_HAND"/>
+    </constraints>
+    <parametermap>			
+		</parametermap>
+    <parameterdefaults>
+      <parameterdefault name="file" value="Humanoids/armandia/procanimation/greta/beat4left_norest.xml"/>
+      <parameterdefault name="postStrokeHoldDuration" value="0.2"/>
+    </parameterdefaults>
+    <MotionUnit type="Gesture" class="asap.animationengine.procanimation.ProcAnimationGestureMU"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="greta_beat4"/>
+    </constraints>
+    <parametermap>			
+		</parametermap>
+    <parameterdefaults>
+      <parameterdefault name="file" value="Humanoids/armandia/procanimation/greta/beat4both_norest.xml"/>
+      <parameterdefault name="postStrokeHoldDuration" value="0.2"/>
+    </parameterdefaults>
+    <MotionUnit type="Gesture" class="asap.animationengine.procanimation.ProcAnimationGestureMU"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="greta_refuse"/>
+      <!--constraint name="hand" value="RIGHT"/-->
+    </constraints>
+    <parametermap>			
+		</parametermap>
+    <parameterdefaults>
+      <parameterdefault name="file" value="Humanoids/armandia/procanimation/greta/refuseright.xml"/>
+      <parameterdefault name="postStrokeHoldDuration" value="0.2"/>
+    </parameterdefaults>
+    <MotionUnit type="Gesture" class="asap.animationengine.procanimation.ProcAnimationGestureMU"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="greta_one"/>
+      <!--constraint name="hand" value="RIGHT"/-->
+    </constraints>
+    <parametermap>			
+		</parametermap>
+    <parameterdefaults>
+      <parameterdefault name="file" value="Humanoids/armandia/procanimation/greta/one.xml"/>
+      <parameterdefault name="postStrokeHoldDuration" value="0.2"/>
+    </parameterdefaults>
+    <MotionUnit type="Gesture" class="asap.animationengine.procanimation.ProcAnimationGestureMU"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="gesture">
+    <constraints>
+      <constraint name="lexeme" value="greta_deictic_self"/>
+      <!--constraint name="hand" value="LEFT"/-->
+    </constraints>
+    <parametermap>			
+		</parametermap>
+    <parameterdefaults>
+      <parameterdefault name="file" value="Humanoids/armandia/procanimation/greta/deictic_self.xml"/>
+      <parameterdefault name="postStrokeHoldDuration" value="0.2"/>
+    </parameterdefaults>
+    <MotionUnit type="Gesture" class="asap.animationengine.procanimation.ProcAnimationGestureMU"/>
+  </MotionUnitSpec>
+  <!-- END LEXICALIZED GRETA GESTURES -->
+  <!--
+	<MotionUnitSpec type="pointing">
+		<constraints>
+		</constraints>
+		<parametermap>
+			<parameter src="target" dst="target"/>			
+			<parameter src="mode" dst="hand"/>			
+		</parametermap>
+		<MotionUnit type="class" class="asap.animationengine.pointing.PointingMU"/>
+	</MotionUnitSpec>
+        -->
+  <MotionUnitSpec type="pointing">
+    <constraints>
+		</constraints>
+    <parametermap>
+      <parameter src="target" dst="target"/>
+      <parameter src="mode" dst="hand"/>
+    </parametermap>
+    <MotionUnit type="class" class="asap.animationengine.pointing.DynamicPointingMU"/>
+  </MotionUnitSpec>
+  <!--
+	<MotionUnitSpec type="head">
+		<constraints>
+			<constraint name="lexeme" value="NOD"/>		
+		</constraints>
+		<parametermap>
+			<parameter src="amount" dst="a"/>
+			<parameter src="repetition" dst="r"/>
+		</parametermap>
+		<parameterdefaults>
+			<parameterdefault name="blending" value="ADDITIVE"/>
+		</parameterdefaults>
+		<MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/smartbody/nod.xml"/>
+	</MotionUnitSpec>
+	-->
+  <MotionUnitSpec type="head">
+    <constraints>
+      <constraint name="lexeme" value="NOD"/>
+    </constraints>
+    <parametermap>
+      <parameter src="amount" dst="a"/>
+      <parameter src="repetition" dst="r"/>
+    </parametermap>
+    <parameterdefaults>
+      <parameterdefault name="amount" value="0.05"/>
+      <parameterdefault name="a" value="0.05"/>
+      <parameterdefault name="blending" value="ADDITIVE"/>
+    </parameterdefaults>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/winterschool/incline.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="head">
+    <constraints>
+      <constraint name="lexeme" value="SHAKE"/>
+    </constraints>
+    <parametermap>
+      <parameter src="amount" dst="a"/>
+      <parameter src="repetition" dst="r"/>
+    </parametermap>
+    <parameterdefaults>
+      <parameterdefault name="blending" value="ADDITIVE"/>
+    </parameterdefaults>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/smartbody/shake.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="head">
+    <constraints>
+      <constraint name="lexeme" value="TILT"/>
+    </constraints>
+    <parametermap>
+      <parameter src="amount" dst="a"/>
+      <parameter src="repetition" dst="r"/>
+    </parametermap>
+    <parameterdefaults>
+      <parameterdefault name="blending" value="ADDITIVE"/>
+    </parameterdefaults>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/smartbody/tilt.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="head">
+    <constraints>
+      <constraint name="lexeme" value="UP_RIGHT"/>
+    </constraints>
+    <parametermap>
+      <parameter src="amount" dst="a"/>
+      <parameter src="repetition" dst="r"/>
+    </parametermap>
+    <parameterdefaults>
+      <parameterdefault name="dx" value="1"/>
+      <parameterdefault name="dy" value="1"/>
+    </parameterdefaults>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/enterface/headpolar.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="head">
+    <constraints>
+      <constraint name="lexeme" value="UP_LEFT"/>
+    </constraints>
+    <parametermap>
+      <parameter src="amount" dst="a"/>
+      <parameter src="repetition" dst="r"/>
+    </parametermap>
+    <parameterdefaults>
+      <parameterdefault name="dx" value="1"/>
+      <parameterdefault name="dy" value="-1"/>
+    </parameterdefaults>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/enterface/headpolar.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="head">
+    <constraints>
+      <constraint name="lexeme" value="UP"/>
+    </constraints>
+    <parametermap>
+      <parameter src="amount" dst="a"/>
+      <parameter src="repetition" dst="r"/>
+    </parametermap>
+    <parameterdefaults>
+      <parameterdefault name="dx" value="1"/>
+      <parameterdefault name="dy" value="0"/>
+    </parameterdefaults>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/enterface/headpolar.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="head">
+    <constraints>
+      <constraint name="lexeme" value="DOWN"/>
+    </constraints>
+    <parametermap>
+      <parameter src="amount" dst="a"/>
+      <parameter src="repetition" dst="r"/>
+    </parametermap>
+    <parameterdefaults>
+      <parameterdefault name="dx" value="-1"/>
+      <parameterdefault name="dy" value="0"/>
+    </parameterdefaults>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/enterface/headpolar.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="head">
+    <constraints>
+      <constraint name="lexeme" value="LEFT"/>
+    </constraints>
+    <parametermap>
+      <parameter src="amount" dst="a"/>
+      <parameter src="repetition" dst="r"/>
+    </parametermap>
+    <parameterdefaults>
+      <parameterdefault name="dx" value="0"/>
+      <parameterdefault name="dy" value="1"/>
+    </parameterdefaults>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/enterface/headpolar.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="head">
+    <constraints>
+      <constraint name="lexeme" value="RIGHT"/>
+    </constraints>
+    <parametermap>
+      <parameter src="amount" dst="a"/>
+      <parameter src="repetition" dst="r"/>
+    </parametermap>
+    <parameterdefaults>
+      <parameterdefault name="dx" value="0"/>
+      <parameterdefault name="dy" value="-1"/>
+    </parameterdefaults>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/enterface/headpolar.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="head">
+    <constraints>
+      <constraint name="lexeme" value="DOWN_LEFT"/>
+    </constraints>
+    <parametermap>
+      <parameter src="amount" dst="a"/>
+      <parameter src="repetition" dst="r"/>
+    </parametermap>
+    <parameterdefaults>
+      <parameterdefault name="dx" value="-1"/>
+      <parameterdefault name="dy" value="1"/>
+    </parameterdefaults>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/enterface/headpolar.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="head">
+    <constraints>
+      <constraint name="lexeme" value="DOWN_RIGHT"/>
+    </constraints>
+    <parametermap>
+      <parameter src="amount" dst="a"/>
+      <parameter src="repetition" dst="r"/>
+    </parametermap>
+    <parameterdefaults>
+      <parameterdefault name="dx" value="-1"/>
+      <parameterdefault name="dy" value="-1"/>
+    </parameterdefaults>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/enterface/headpolar.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="head">
+    <constraints>
+      <constraint name="lexeme" value="FRONT"/>
+    </constraints>
+    <parametermap>
+      <parameter src="amount" dst="a"/>
+      <parameter src="repetition" dst="r"/>
+    </parametermap>
+    <parameterdefaults>
+      <parameterdefault name="dx" value="0"/>
+      <parameterdefault name="dy" value="0"/>
+    </parameterdefaults>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/enterface/headpolar.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="gaze">
+    <constraints>
+      <constraint name="influence" value="NECK"/>
+      <constraint namespace="http://hmi.ewi.utwente.nl/bmlt" name="dynamic" value="true"/>
+    </constraints>
+    <parametermap>
+      <parameter src="target" dst="target"/>
+      <parameter src="offsetAngle" dst="offsetangle"/>
+      <parameter src="offsetDirection" dst="offsetdirection"/>
+      <parameter src="influence" dst="influence"/>
+    </parametermap>
+    <MotionUnit type="class" class="asap.animationengine.gaze.DynamicGazeMU"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="gaze">
+    <constraints>
+      <constraint name="influence" value="WAIST"/>
+    </constraints>
+    <parametermap>
+      <parameter src="target" dst="target"/>
+      <parameter src="offsetAngle" dst="offsetangle"/>
+      <parameter src="offsetDirection" dst="offsetdirection"/>
+      <parameter src="influence" dst="influence"/>
+    </parametermap>
+    <MotionUnit type="class" class="asap.animationengine.gaze.DynamicGazeMU"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="gaze">
+    <constraints>
+      <constraint name="influence" value="SHOULDER"/>
+    </constraints>
+    <parametermap>
+      <parameter src="target" dst="target"/>
+      <parameter src="offsetAngle" dst="offsetangle"/>
+      <parameter src="offsetDirection" dst="offsetdirection"/>
+      <parameter src="influence" dst="influence"/>
+    </parametermap>
+    <MotionUnit type="class" class="asap.animationengine.gaze.DynamicGazeMU"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="gaze">
+    <constraints>
+      <constraint name="influence" value="NECK"/>
+    </constraints>
+    <parametermap>
+      <parameter src="target" dst="target"/>
+      <parameter src="offsetAngle" dst="offsetangle"/>
+      <parameter src="offsetDirection" dst="offsetdirection"/>
+      <parameter src="influence" dst="influence"/>
+    </parametermap>
+    <MotionUnit type="class" class="asap.animationengine.gaze.TweedGazeMU"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="gaze">
+    <constraints>
+      <constraint name="influence" value="EYES"/>
+    </constraints>
+    <parametermap>
+      <parameter src="target" dst="target"/>
+      <parameter src="offsetAngle" dst="offsetangle"/>
+      <parameter src="offsetDirection" dst="offsetdirection"/>
+      <parameter src="influence" dst="influence"/>
+    </parametermap>
+    <MotionUnit type="class" class="asap.animationengine.gaze.EyeGazeMU"/>
+  </MotionUnitSpec>
+  <!--	
+	<MotionUnitSpec type="keyframe" namespace="http://hmi.ewi.utwente.nl/bmlt">
+		<constraints>
+			<constraint name="name" value="clench_fists"/>
+		</constraints>		
+		<MotionUnit type="Keyframe" file="Humanoids/shared/keyframe/clench_fists.xml"/>
+	</MotionUnitSpec>
+  <MotionUnitSpec type="keyframe" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="name" value="clench_rfist"/>
+    </constraints>
+    <MotionUnit type="Keyframe" file="Humanoids/shared/keyframeanimation/hand/rh-from-flat-2-fist.xml"/>
+  </MotionUnitSpec>
+ <MotionUnitSpec type="keyframe" namespace="http://hmi.ewi.utwente.nl/bmlt">
+		<constraints>
+			<constraint name="name" value="l_form_fist"/>
+		</constraints>		
+		<MotionUnit type="Keyframe" file="Humanoids/shared/keyframeanimation/hand/l_form_fist"/>
+	</MotionUnitSpec>
+	<MotionUnitSpec type="keyframe" namespace="http://hmi.ewi.utwente.nl/bmlt">
+		<constraints>
+			<constraint name="name" value="l_thumb_away"/>
+		</constraints>		
+		<MotionUnit type="Keyframe" file="Humanoids/shared/keyframeanimation/hand/l_thumb_away.xml"/>
+	</MotionUnitSpec>
+	<MotionUnitSpec type="keyframe" namespace="http://hmi.ewi.utwente.nl/bmlt">
+		<constraints>
+			<constraint name="name" value="r_form_fist"/>
+		</constraints>		
+		<MotionUnit type="Keyframe" file="Humanoids/shared/keyframeanimation/hand/r_form_fist"/>
+	</MotionUnitSpec>
+	<MotionUnitSpec type="keyframe" namespace="http://hmi.ewi.utwente.nl/bmlt">
+		<constraints>
+			<constraint name="name" value="r_thumb_away"/>
+		</constraints>		
+		<MotionUnit type="Keyframe" file="Humanoids/shared/keyframeanimation/hand/r_thumb_away.xml"/>
+	</MotionUnitSpec-->
+  <MotionUnitSpec type="procanimation" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="name" value="incline"/>
+    </constraints>
+    <parametermap>
+      <parameter src="amount" dst="a"/>
+    </parametermap>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/winterschool/incline.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="procanimation" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="name" value="eyeturn"/>
+    </constraints>
+    <parametermap>
+      <parameter src="yaw" dst="y"/>
+      <parameter src="pitch" dst="p"/>
+    </parametermap>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/winterschool/eyeturn.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="procanimation" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="name" value="headraise"/>
+    </constraints>
+    <parametermap>
+      <parameter src="amount" dst="a"/>
+    </parametermap>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/winterschool/headraise.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="procanimation" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="name" value="jawdown"/>
+    </constraints>
+    <parametermap>
+      <parameter src="amount" dst="a"/>
+    </parametermap>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/jawdown.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="procanimation" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="name" value="headbob"/>
+    </constraints>
+    <parametermap>
+      <parameter src="amountA" dst="a"/>
+      <parameter src="amountB" dst="b"/>
+      <parameter src="repeats" dst="r"/>
+    </parametermap>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/winterschool/headbob.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="procanimation" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="name" value="headbobeye"/>
+    </constraints>
+    <parametermap>
+      <parameter src="amountA" dst="a"/>
+      <parameter src="amountB" dst="b"/>
+      <parameter src="amountC" dst="c"/>
+      <parameter src="repeats" dst="r"/>
+    </parametermap>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/winterschool/headbobeye.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="procanimation" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="name" value="headturn"/>
+    </constraints>
+    <parametermap>
+      <parameter src="amount" dst="a"/>
+    </parametermap>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/winterschool/headturn.xml"/>
+  </MotionUnitSpec>
+  <!-- Custom compound controllers -->
+  <MotionUnitSpec type="controller" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="class" value="CompoundController"/>
+      <constraint name="name" value="leftarmhang"/>
+    </constraints>
+    <parametermap>
+      <parameter src="priority" dst="priority"/>
+      <parameter src="shoulder:anglex" dst="shoulder:anglex"/>
+      <parameter src="shoulder:angley" dst="shoulder:angley"/>
+      <parameter src="shoulder:anglez" dst="shoulder:anglez"/>
+      <parameter src="shoulder:ksx" dst="shoulder:ksx"/>
+      <parameter src="shoulder:dsx" dst="shoulder:dsx"/>
+      <parameter src="shoulder:ksy" dst="shoulder:ksy"/>
+      <parameter src="shoulder:dsy" dst="shoulder:dsy"/>
+      <parameter src="shoulder:ksz" dst="shoulder:ksz"/>
+      <parameter src="shoulder:dsz" dst="shoulder:dsz"/>
+      <parameter src="elbow:angle" dst="elbow:angle"/>
+      <parameter src="elbow:ks" dst="elbow:ks"/>
+      <parameter src="elbow:ds" dst="elbow:ds"/>
+      <parameter src="elbow:axis" dst="elbow:axis"/>
+    </parametermap>
+    <parameterdefaults>
+		</parameterdefaults>
+    <MotionUnit type="CompoundController" file="Humanoids/armandia/controllers/left_arm_hang_armandia.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="controller" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="class" value="CompoundController"/>
+      <constraint name="name" value="rightarmhang"/>
+    </constraints>
+    <parametermap>
+      <parameter src="priority" dst="priority"/>
+      <parameter src="shoulder:anglex" dst="shoulder:anglex"/>
+      <parameter src="shoulder:angley" dst="shoulder:angley"/>
+      <parameter src="shoulder:anglez" dst="shoulder:anglez"/>
+      <parameter src="shoulder:ksx" dst="shoulder:ksx"/>
+      <parameter src="shoulder:dsx" dst="shoulder:dsx"/>
+      <parameter src="shoulder:ksy" dst="shoulder:ksy"/>
+      <parameter src="shoulder:dsy" dst="shoulder:dsy"/>
+      <parameter src="shoulder:ksz" dst="shoulder:ksz"/>
+      <parameter src="shoulder:dsz" dst="shoulder:dsz"/>
+      <parameter src="elbow:angle" dst="elbow:angle"/>
+      <parameter src="elbow:ks" dst="elbow:ks"/>
+      <parameter src="elbow:ds" dst="elbow:ds"/>
+      <parameter src="elbow:axis" dst="elbow:axis"/>
+    </parametermap>
+    <parameterdefaults>
+		</parameterdefaults>
+    <MotionUnit type="CompoundController" file="Humanoids/armandia/controllers/right_arm_hang_armandia.xml"/>
+  </MotionUnitSpec>
+  <!-- Mapping of generic controllers -->
+  <MotionUnitSpec type="controller" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="class" value="BalanceController"/>
+    </constraints>
+    <parametermap>
+      <parameter src="pelvisheight" dst="pelvisheight"/>
+      <parameter src="priority" dst="priority"/>
+    </parametermap>
+    <MotionUnit type="PhysicalController" class="hmi.physics.controller.BalanceController"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="controller" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="class" value="RagdollController"/>
+    </constraints>
+    <parametermap>
+      <parameter src="joints" dst="joints"/>
+      <parameter src="priority" dst="priority"/>
+    </parametermap>
+    <MotionUnit type="PhysicalController" class="hmi.physics.controller.RagdollController"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="controller" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="class" value="RigidBodyDamper"/>
+    </constraints>
+    <parametermap>
+      <parameter src="body" dst="body"/>
+      <parameter src="dsrot" dst="dsrot"/>
+      <parameter src="dslin" dst="dslin"/>
+      <parameter src="priority" dst="priority"/>
+    </parametermap>
+    <MotionUnit type="PhysicalController" class="hmi.physics.controller.RigidBodyDamper"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="controller" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="class" value="BallJointController"/>
+    </constraints>
+    <parametermap>
+      <parameter src="joint" dst="joint"/>
+      <parameter src="anglex" dst="anglex"/>
+      <parameter src="angley" dst="angley"/>
+      <parameter src="anglez" dst="anglez"/>
+      <parameter src="ksx" dst="ksx"/>
+      <parameter src="dsx" dst="dsx"/>
+      <parameter src="ksy" dst="ksy"/>
+      <parameter src="dsy" dst="dsy"/>
+      <parameter src="ksz" dst="ksz"/>
+      <parameter src="dsz" dst="dsz"/>
+      <parameter src="priority" dst="priority"/>
+    </parametermap>
+    <MotionUnit type="PhysicalController" class="hmi.physics.controller.BallJointController"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="controller" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="class" value="NoController"/>
+    </constraints>
+    <parametermap>
+      <parameter src="priority" dst="priority"/>
+    </parametermap>
+    <MotionUnit type="PhysicalController" class="hmi.physics.controller.NoController"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="controller" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="class" value="HingeJointController"/>
+    </constraints>
+    <parametermap>
+      <parameter src="joint" dst="joint"/>
+      <parameter src="angle" dst="angle"/>
+      <parameter src="ks" dst="ks"/>
+      <parameter src="ds" dst="ds"/>
+      <parameter src="axis" dst="axis"/>
+      <parameter src="priority" dst="priority"/>
+    </parametermap>
+    <MotionUnit type="PhysicalController" class="hmi.physics.controller.HingeJointController"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="controller" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="class" value="FrictionController"/>
+    </constraints>
+    <parametermap>
+      <parameter src="joint" dst="joint"/>
+      <parameter src="friction" dst="friction"/>
+      <parameter src="priority" dst="priority"/>
+    </parametermap>
+    <MotionUnit type="PhysicalController" class="hmi.physics.controller.FrictionController"/>
+  </MotionUnitSpec>
+  <!-- Mapping of Conductor gestures. 
+   1, 2, 3, 4 beat 
+   left handed, right handed, both handed (last one not yet!)
+   start 1..4 beat right handed
+   stop gesture r, l, both handed -->
+  <MotionUnitSpec type="procanimation" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="name" value="conduct-1-beat"/>
+      <constraint name="hand" value="LEFT"/>
+    </constraints>
+    <parametermap>
+      <parameter src="a" dst="a"/>
+      <parameter src="xoff" dst="xoff"/>
+      <parameter src="yoff" dst="yoff"/>
+      <parameter src="zoff" dst="zoff"/>
+    </parametermap>
+    <parameterdefaults>
+      <parameterdefault name="a" value="0.7"/>
+      <parameterdefault name="yoff" value="-0.05"/>
+    </parameterdefaults>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/conductor/1-beat_pattern_LH.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="procanimation" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="name" value="conduct-1-beat"/>
+      <constraint name="hand" value="RIGHT"/>
+    </constraints>
+    <parametermap>
+      <parameter src="a" dst="a"/>
+      <parameter src="xoff" dst="xoff"/>
+      <parameter src="yoff" dst="yoff"/>
+      <parameter src="zoff" dst="zoff"/>
+    </parametermap>
+    <parameterdefaults>
+      <parameterdefault name="a" value="0.7"/>
+      <parameterdefault name="yoff" value="-0.05"/>
+    </parameterdefaults>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/conductor/1-beat_pattern_RH.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="procanimation" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="name" value="conduct-1-beat-start"/>
+      <constraint name="hand" value="RIGHT"/>
+    </constraints>
+    <parametermap>
+      <parameter src="a" dst="a"/>
+      <parameter src="xoff" dst="xoff"/>
+      <parameter src="yoff" dst="yoff"/>
+      <parameter src="zoff" dst="zoff"/>
+    </parametermap>
+    <parameterdefaults>
+      <parameterdefault name="a" value="0.7"/>
+      <parameterdefault name="yoff" value="-0.05"/>
+    </parameterdefaults>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/conductor/1-beat_pattern_Start_RH.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="procanimation" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="name" value="conduct-2-beat"/>
+      <constraint name="hand" value="LEFT"/>
+    </constraints>
+    <parametermap>
+      <parameter src="a" dst="a"/>
+      <parameter src="xoff" dst="xoff"/>
+      <parameter src="yoff" dst="yoff"/>
+      <parameter src="zoff" dst="zoff"/>
+    </parametermap>
+    <parameterdefaults>
+      <parameterdefault name="a" value="0.7"/>
+      <parameterdefault name="yoff" value="-0.05"/>
+    </parameterdefaults>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/conductor/2-beat_pattern_LH.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="procanimation" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="name" value="conduct-2-beat"/>
+      <constraint name="hand" value="RIGHT"/>
+    </constraints>
+    <parametermap>
+      <parameter src="a" dst="a"/>
+      <parameter src="xoff" dst="xoff"/>
+      <parameter src="yoff" dst="yoff"/>
+      <parameter src="zoff" dst="zoff"/>
+    </parametermap>
+    <parameterdefaults>
+      <parameterdefault name="a" value="0.7"/>
+      <parameterdefault name="yoff" value="-0.05"/>
+    </parameterdefaults>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/conductor/2-beat_pattern_RH.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="procanimation" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="name" value="conduct-2-beat-start"/>
+      <constraint name="hand" value="RIGHT"/>
+    </constraints>
+    <parametermap>
+      <parameter src="a" dst="a"/>
+      <parameter src="xoff" dst="xoff"/>
+      <parameter src="yoff" dst="yoff"/>
+      <parameter src="zoff" dst="zoff"/>
+    </parametermap>
+    <parameterdefaults>
+      <parameterdefault name="a" value="0.7"/>
+      <parameterdefault name="yoff" value="-0.05"/>
+    </parameterdefaults>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/conductor/2-beat_pattern_Start_RH.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="procanimation" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="name" value="3beat"/>
+    </constraints>
+    <parametermap>
+      <parameter src="a" dst="a"/>
+      <parameter src="xoff" dst="xoff"/>
+      <parameter src="yoff" dst="yoff"/>
+      <parameter src="zoff" dst="zoff"/>
+    </parametermap>
+    <parameterdefaults>
+      <parameterdefault name="a" value="0.7"/>
+      <parameterdefault name="yoff" value="-0.05"/>
+      <parameterdefault name="zoff" value="-0.05"/>
+    </parameterdefaults>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/3-beat-simplified.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="procanimation" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="name" value="conduct-3-beat"/>
+      <constraint name="hand" value="LEFT"/>
+    </constraints>
+    <parametermap>
+      <parameter src="a" dst="a"/>
+      <parameter src="xoff" dst="xoff"/>
+      <parameter src="yoff" dst="yoff"/>
+      <parameter src="zoff" dst="zoff"/>
+    </parametermap>
+    <parameterdefaults>
+      <parameterdefault name="a" value="0.7"/>
+      <parameterdefault name="yoff" value="-0.05"/>
+    </parameterdefaults>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/conductor/3-beat_pattern_LH.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="procanimation" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="name" value="conduct-3-beat"/>
+      <constraint name="hand" value="RIGHT"/>
+    </constraints>
+    <parametermap>
+      <parameter src="a" dst="a"/>
+      <parameter src="xoff" dst="xoff"/>
+      <parameter src="yoff" dst="yoff"/>
+      <parameter src="zoff" dst="zoff"/>
+    </parametermap>
+    <parameterdefaults>
+      <parameterdefault name="a" value="0.7"/>
+      <parameterdefault name="yoff" value="-0.05"/>
+    </parameterdefaults>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/conductor/3-beat_pattern_RH.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="procanimation" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="name" value="conduct-3-beat-start"/>
+      <constraint name="hand" value="RIGHT"/>
+    </constraints>
+    <parametermap>
+      <parameter src="a" dst="a"/>
+      <parameter src="xoff" dst="xoff"/>
+      <parameter src="yoff" dst="yoff"/>
+      <parameter src="zoff" dst="zoff"/>
+    </parametermap>
+    <parameterdefaults>
+      <parameterdefault name="a" value="0.7"/>
+      <parameterdefault name="yoff" value="-0.05"/>
+    </parameterdefaults>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/conductor/3-beat_pattern_Start_RH.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="procanimation" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="name" value="conduct-4-beat"/>
+      <constraint name="hand" value="LEFT"/>
+    </constraints>
+    <parametermap>
+      <parameter src="a" dst="a"/>
+      <parameter src="xoff" dst="xoff"/>
+      <parameter src="yoff" dst="yoff"/>
+      <parameter src="zoff" dst="zoff"/>
+    </parametermap>
+    <parameterdefaults>
+      <parameterdefault name="a" value="0.7"/>
+      <parameterdefault name="yoff" value="-0.05"/>
+    </parameterdefaults>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/conductor/4-beat_pattern_LH.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="procanimation" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="name" value="conduct-4-beat"/>
+      <constraint name="hand" value="RIGHT"/>
+    </constraints>
+    <parametermap>
+      <parameter src="a" dst="a"/>
+      <parameter src="xoff" dst="xoff"/>
+      <parameter src="yoff" dst="yoff"/>
+      <parameter src="zoff" dst="zoff"/>
+    </parametermap>
+    <parameterdefaults>
+      <parameterdefault name="a" value="0.7"/>
+      <parameterdefault name="yoff" value="-0.05"/>
+    </parameterdefaults>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/conductor/4-beat_pattern_RH.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="procanimation" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="name" value="conduct-4-beat-start"/>
+      <constraint name="hand" value="RIGHT"/>
+    </constraints>
+    <parametermap>
+      <parameter src="a" dst="a"/>
+      <parameter src="xoff" dst="xoff"/>
+      <parameter src="yoff" dst="yoff"/>
+      <parameter src="zoff" dst="zoff"/>
+    </parametermap>
+    <parameterdefaults>
+      <parameterdefault name="a" value="0.7"/>
+      <parameterdefault name="yoff" value="-0.05"/>
+    </parameterdefaults>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/conductor/4-beat_pattern_Start_RH.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="procanimation" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="name" value="conduct-stop"/>
+      <constraint name="hand" value="BOTH"/>
+    </constraints>
+    <parametermap>
+      <parameter src="a" dst="a"/>
+      <parameter src="xoff" dst="xoff"/>
+      <parameter src="yoff" dst="yoff"/>
+      <parameter src="zoff" dst="zoff"/>
+    </parametermap>
+    <parameterdefaults>
+      <parameterdefault name="a" value="0.7"/>
+      <parameterdefault name="yoff" value="-0.05"/>
+    </parameterdefaults>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/conductor/Stop_Playing_BH.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="procanimation" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="name" value="conduct-stop"/>
+      <constraint name="hand" value="RIGHT"/>
+    </constraints>
+    <parametermap>
+      <parameter src="a" dst="a"/>
+      <parameter src="xoff" dst="xoff"/>
+      <parameter src="yoff" dst="yoff"/>
+      <parameter src="zoff" dst="zoff"/>
+    </parametermap>
+    <parameterdefaults>
+      <parameterdefault name="a" value="0.7"/>
+      <parameterdefault name="yoff" value="-0.05"/>
+    </parameterdefaults>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/conductor/Stop_Playing_RH.xml"/>
+  </MotionUnitSpec>
+  <MotionUnitSpec type="procanimation" namespace="http://hmi.ewi.utwente.nl/bmlt">
+    <constraints>
+      <constraint name="name" value="conduct-stop"/>
+      <constraint name="hand" value="LEFT"/>
+    </constraints>
+    <parametermap>
+      <parameter src="a" dst="a"/>
+      <parameter src="xoff" dst="xoff"/>
+      <parameter src="yoff" dst="yoff"/>
+      <parameter src="zoff" dst="zoff"/>
+    </parametermap>
+    <parameterdefaults>
+      <parameterdefault name="a" value="0.7"/>
+      <parameterdefault name="yoff" value="-0.05"/>
+    </parameterdefaults>
+    <MotionUnit type="ProcAnimation" file="Humanoids/shared/procanimation/conductor/Stop_Playing_LH.xml"/>
+  </MotionUnitSpec>
+</gesturebinding>
