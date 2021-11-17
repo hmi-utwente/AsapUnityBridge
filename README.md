@@ -1,8 +1,3 @@
-# AsapUnityBridge
-
-As presented [during the IVA 2017 conference in Stockholm](http://iva2017.org/).
-
-
 ## Getting Started
 
 Clone this repository with git. Then enter the directory and fetch submodules:
